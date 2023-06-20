@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn243guqhbtf3"]
+
+[ext_resource type="Script" path="res://scenes/ui/game_screen/game_screen.gd" id="1_tfiy7"]
+[ext_resource type="PackedScene" uid="uid://cian3h8em4mys" path="res://scenes/ui/ui_domino/ui_domino.tscn" id="2_bjubk"]
+[ext_resource type="PackedScene" uid="uid://cu6inw8kkswgo" path="res://scenes/ui/player_container/player_container.tscn" id="3_cn72v"]
+[ext_resource type="PackedScene" uid="uid://hwkfd87hvvpb" path="res://scenes/ui/bonepile/bonepile.tscn" id="4_pdt8j"]
+
+[node name="GameScreen" type="Node"]
+script = ExtResource("1_tfiy7")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="RoundNumContainer" type="VBoxContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_right = 58.0
+offset_bottom = 126.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/RoundNumContainer"]
+layout_mode = 2
+text = "Current Round"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="UI/RoundNumContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Domino" parent="UI/RoundNumContainer/Control" instance=ExtResource("2_bjubk")]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 61.0
+offset_bottom = 88.0
+rotation = 1.5708
+pivot_offset = Vector2(46, 46)
+
+[node name="PlayerContainer" parent="UI" instance=ExtResource("3_cn72v")]
+
+[node name="Bonepile" parent="UI" instance=ExtResource("4_pdt8j")]

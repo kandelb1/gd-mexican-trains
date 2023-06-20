@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd0vdwra1bfyw"]
+
+[ext_resource type="Texture2D" uid="uid://bbh521wdbovgh" path="res://assets/Base.png" id="1_k2to8"]
+[ext_resource type="Script" path="res://scenes/game_objects/domino/domino.gd" id="1_ycm6t"]
+[ext_resource type="Script" path="res://resources/domino_resource.gd" id="2_s5svo"]
+
+[sub_resource type="Resource" id="Resource_t6ddt"]
+script = ExtResource("2_s5svo")
+top_num = 5
+bot_num = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65a0h"]
+size = Vector2(52, 96)
+
+[node name="Domino" type="Node2D" groups=["dominos"]]
+script = ExtResource("1_ycm6t")
+domino = SubResource("Resource_t6ddt")
+
+[node name="BaseImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_k2to8")
+
+[node name="TopImage" type="Sprite2D" parent="BaseImage"]
+
+[node name="BottomImage" type="Sprite2D" parent="BaseImage"]
+offset = Vector2(0, 46)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_65a0h")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhn1hcd56qa6t"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_fsjtd"]
+[ext_resource type="PackedScene" uid="uid://dd0vdwra1bfyw" path="res://scenes/game_objects/domino/domino.tscn" id="2_wvos0"]
+
+[node name="Player" type="Node" groups=["players"]]
+script = ExtResource("1_fsjtd")
+domino_scene = ExtResource("2_wvos0")

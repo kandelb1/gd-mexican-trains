@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://br7nooo7fj6g2"]
+
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_xu0pt"]
+[ext_resource type="PackedScene" uid="uid://b5ymud5khdjch" path="res://scenes/managers/mouse_manager.tscn" id="1_y81yq"]
+[ext_resource type="PackedScene" uid="uid://dllydgcikd102" path="res://scenes/ui/ui_train/ui_train.tscn" id="2_3h1h4"]
+[ext_resource type="PackedScene" uid="uid://dhn1hcd56qa6t" path="res://scenes/player/player.tscn" id="3_0tlwb"]
+[ext_resource type="PackedScene" uid="uid://dulnwh86hvpyd" path="res://scenes/ui/score_screen/score_screen.tscn" id="4_t38xl"]
+[ext_resource type="PackedScene" uid="uid://cu6inw8kkswgo" path="res://scenes/ui/player_container/player_container.tscn" id="7_6lq1f"]
+[ext_resource type="PackedScene" uid="uid://hwkfd87hvvpb" path="res://scenes/ui/bonepile/bonepile.tscn" id="8_gj75f"]
+[ext_resource type="AudioStream" uid="uid://lb5awnw7lpgi" path="res://assets/domino-place-1.mp3" id="9_5o8m7"]
+[ext_resource type="PackedScene" uid="uid://cian3h8em4mys" path="res://scenes/ui/ui_domino/ui_domino.tscn" id="10_8rr8b"]
+[ext_resource type="AudioStream" uid="uid://d1shn41rcf4jv" path="res://assets/domino-place-2.mp3" id="10_j05oe"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yhx5n"]
+streams_count = 2
+playback_mode = 1
+stream_0/stream = ExtResource("9_5o8m7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_j05oe")
+stream_1/weight = 1.0
+
+[node name="Main" type="Node"]
+script = ExtResource("1_xu0pt")
+train_scene = ExtResource("2_3h1h4")
+player_scene = ExtResource("3_0tlwb")
+score_screen_scene = ExtResource("4_t38xl")
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="MouseManager" parent="Managers" instance=ExtResource("1_y81yq")]
+
+[node name="Trains" type="Node" parent="."]
+
+[node name="Players" type="Node" parent="."]
+
+[node name="UI" type="Node" parent="."]
+
+[node name="PlayerContainer" parent="UI" instance=ExtResource("7_6lq1f")]
+
+[node name="Bonepile" parent="UI" instance=ExtResource("8_gj75f")]
+
+[node name="RoundNumContainer" type="VBoxContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_right = 58.0
+offset_bottom = 126.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/RoundNumContainer"]
+layout_mode = 2
+text = "Current Round"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="UI/RoundNumContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="RoundNumDomino" parent="UI/RoundNumContainer/Control" instance=ExtResource("10_8rr8b")]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 61.0
+offset_bottom = 88.0
+rotation = 1.5708
+pivot_offset = Vector2(46, 46)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_yhx5n")

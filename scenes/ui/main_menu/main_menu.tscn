@@ -1,0 +1,179 @@
+[gd_scene load_steps=3 format=3 uid="uid://lih2ogvfw86k"]
+
+[ext_resource type="Script" path="res://scenes/ui/main_menu/main_menu.gd" id="1_7qv6q"]
+[ext_resource type="PackedScene" uid="uid://br7nooo7fj6g2" path="res://scenes/main/main.tscn" id="2_vp4xx"]
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -504.0
+offset_top = -252.0
+offset_right = 504.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7qv6q")
+main_scene = ExtResource("2_vp4xx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PlayerConfig" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="P1" type="VBoxContainer" parent="VBoxContainer/PlayerConfig"]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P1/Name"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+text = "P1 Name"
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/PlayerConfig/P1/Name"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Alex"
+placeholder_text = "p1 name"
+scroll_fit_content_height = true
+
+[node name="Type" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P1/Type"]
+layout_mode = 2
+text = "AI Player"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/PlayerConfig/P1/Type"]
+layout_mode = 2
+
+[node name="P2" type="VBoxContainer" parent="VBoxContainer/PlayerConfig"]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P2/Name"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "P2 Name"
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/PlayerConfig/P2/Name"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Jim"
+placeholder_text = "p2 name"
+scroll_fit_content_height = true
+
+[node name="Type" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P2/Type"]
+layout_mode = 2
+text = "AI Player"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/PlayerConfig/P2/Type"]
+layout_mode = 2
+button_pressed = true
+
+[node name="P3" type="VBoxContainer" parent="VBoxContainer/PlayerConfig"]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P3/Name"]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 2
+text = "P3 Name"
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/PlayerConfig/P3/Name"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Dave"
+placeholder_text = "p3 name"
+scroll_fit_content_height = true
+
+[node name="Type" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P3/Type"]
+layout_mode = 2
+text = "AI Player"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/PlayerConfig/P3/Type"]
+layout_mode = 2
+button_pressed = true
+
+[node name="P4" type="VBoxContainer" parent="VBoxContainer/PlayerConfig"]
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P4/Name"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+text = "P4 Name"
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/PlayerConfig/P4/Name"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Rob"
+placeholder_text = "p4 name"
+scroll_fit_content_height = true
+
+[node name="Type" type="HBoxContainer" parent="VBoxContainer/PlayerConfig/P4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayerConfig/P4/Type"]
+layout_mode = 2
+text = "AI Player"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/PlayerConfig/P4/Type"]
+layout_mode = 2
+button_pressed = true
+
+[node name="RoundConfig" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/RoundConfig"]
+layout_mode = 2
+text = "Starting Round"
+
+[node name="RoundNum" type="SpinBox" parent="VBoxContainer/RoundConfig"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 12.0
+value = 12.0
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="StartButton" type="Button" parent="VBoxContainer/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Quit
+"

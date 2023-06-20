@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cian3h8em4mys"]
+
+[ext_resource type="Texture2D" uid="uid://u1bmcrdwib4o" path="res://assets/Base.png" id="1_j83vo"]
+[ext_resource type="Script" path="res://scenes/ui/ui_domino/ui_domino.gd" id="2_wt38y"]
+[ext_resource type="Script" path="res://resources/domino_resource.gd" id="3_8i8q0"]
+[ext_resource type="Texture2D" uid="uid://c5nxchx46l2f6" path="res://assets/Four.png" id="4_a5dph"]
+
+[sub_resource type="Resource" id="Resource_4q0xn"]
+script = ExtResource("3_8i8q0")
+top_num = 1
+bot_num = 7
+
+[node name="UIDomino" type="Control"]
+custom_minimum_size = Vector2(53, 96)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 53.0
+offset_bottom = 96.0
+pivot_offset = Vector2(27, 48)
+script = ExtResource("2_wt38y")
+domino = SubResource("Resource_4q0xn")
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.4735
+offset_top = -48.0
+offset_right = 26.4735
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(27, 48)
+texture = ExtResource("1_j83vo")
+
+[node name="TopImage" type="TextureRect" parent="BaseImage"]
+layout_mode = 0
+offset_right = 53.0
+offset_bottom = 96.0
+texture = ExtResource("4_a5dph")
+
+[node name="BotImage" type="TextureRect" parent="BaseImage"]
+layout_mode = 0
+offset_right = 53.0
+offset_bottom = 96.0
+texture = ExtResource("4_a5dph")
+flip_v = true

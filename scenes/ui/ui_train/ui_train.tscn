@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://dllydgcikd102"]
+
+[ext_resource type="Script" path="res://scenes/ui/ui_train/ui_train.gd" id="1_8bd7c"]
+[ext_resource type="PackedScene" uid="uid://cian3h8em4mys" path="res://scenes/ui/ui_domino/ui_domino.tscn" id="1_nrsdy"]
+[ext_resource type="Texture2D" uid="uid://ca613c567mexe" path="res://assets/O.png" id="3_jscao"]
+[ext_resource type="Texture2D" uid="uid://dwwp6cbths2rr" path="res://assets/X.png" id="4_6wqqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3nos"]
+size = Vector2(51.5, 95.5)
+
+[node name="UITrain" type="Node2D" groups=["trains"]]
+script = ExtResource("1_8bd7c")
+domino_scene = ExtResource("1_nrsdy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -71.0
+offset_right = 21.0
+offset_bottom = -19.0
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="SuppLabel" type="Label" parent="."]
+visible = false
+offset_left = 76.0
+offset_top = -13.0
+offset_right = 184.0
+offset_bottom = 13.0
+text = "Supplemental"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(96, 482)
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 56.0
+offset_bottom = 434.0
+pivot_offset = Vector2(47, -1)
+size_flags_horizontal = 4
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.25, 38.25)
+shape = SubResource("RectangleShape2D_p3nos")
+
+[node name="Open" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -76)
+texture = ExtResource("3_jscao")
+
+[node name="Closed" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -76)
+texture = ExtResource("4_6wqqp")

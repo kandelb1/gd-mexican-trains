@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://hwkfd87hvvpb"]
+
+[ext_resource type="Script" path="res://scenes/ui/bonepile/bonepile.gd" id="1_iyk5o"]
+[ext_resource type="Texture2D" uid="uid://dsqnqusaaptnj" path="res://assets/Backside.png" id="1_q0sqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxapk"]
+size = Vector2(103, 113.5)
+
+[node name="Bonepile" type="Node2D"]
+script = ExtResource("1_iyk5o")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(48.5, 57.25)
+shape = SubResource("RectangleShape2D_cxapk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 96.0
+offset_bottom = 112.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Bonepile"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(96, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -48.0
+offset_right = 26.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(26, 48)
+texture = ExtResource("1_q0sqv")
+
+[node name="BonesLeft" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "52 left"
+horizontal_alignment = 1

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu6inw8kkswgo"]
+
+[ext_resource type="PackedScene" uid="uid://io7suhye10np" path="res://scenes/ui/player_card/player_card.tscn" id="1_esxrb"]
+[ext_resource type="Script" path="res://scenes/ui/player_container/player_container.gd" id="1_pqdaq"]
+
+[node name="PlayerContainer" type="HBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -417.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 75.0
+grow_horizontal = 0
+theme_override_constants/separation = 5
+alignment = 2
+script = ExtResource("1_pqdaq")
+player_card_scene = ExtResource("1_esxrb")
